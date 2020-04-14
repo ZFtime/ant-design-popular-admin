@@ -1,0 +1,87 @@
+@import "../../styles/var";
+
+.header {
+  width: 100%;
+  padding: 0 !important;
+  height: @header-height;
+  background-color: transparent !important;
+}
+
+.header_wrapper {
+  width: 100%;
+  padding: 0 !important;
+  height: @header-height;
+}
+
+.globalHeader {
+  background-color: #fff;
+  height: @header-height;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+}
+
+.globalHeaderLogo {
+  padding: 0 0 0 12px !important;
+}
+
+
+.trigger {
+  height: 64px;
+  padding: 0 24px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all .3s, padding 0s;
+}
+
+
+.wrapper {
+  width: 100%;
+  transition: background .3s, width .2s;
+}
+
+.headerMain {
+  height: @header-height;
+  display: flex;
+  padding: 0 10px !important;
+
+  :global {
+    a > h1 {
+      font-size: 16px;
+      display: inline-block;
+      margin: 0 0 0 12px;
+      vertical-align: top;
+    }
+  }
+}
+
+.headerMainLogo {
+  padding: 0 !important;
+  min-width: 165px;
+}
+
+.headerMainMenu {
+  flex: 1 1 0%;
+
+  :global {
+    .ant-menu.ant-menu-horizontal {
+      height: @header-height;
+      line-height: @header-height;
+      border: none;
+    }
+  }
+}
+
+.light {
+  background-color: #fff;
+}
+
+.fixed {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9;
+  transition: width .2s;
+}

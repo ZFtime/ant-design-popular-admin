@@ -1,0 +1,59 @@
+@import "../../styles/var";
+
+.container {
+  display: flex;
+  float: right;
+  height: @header-height;
+  margin-left: auto;
+  overflow: hidden;
+}
+
+.container.dark {
+  .item:hover {
+    background-color: @primary-color !important;
+
+    .itemName {
+      color: fade(#fff, 80%);
+    }
+  }
+
+  .itemName {
+    color: fade(#fff, 80%)
+  }
+
+  .icon {
+    color: fade(#fff, 80%);
+  }
+}
+
+
+.item {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: all .3s;
+}
+
+.item:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.icon {
+  font-size: 16px;
+}
+
+.userIcon {
+  margin-right: 10px;
+}
+
+.itemName {
+  font-size: 14px;
+  color: #666;
+  margin-left: 5px;
+}
+
+.notice {
+  background-color: #fff;
+}

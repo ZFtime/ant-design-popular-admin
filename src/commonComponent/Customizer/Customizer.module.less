@@ -1,0 +1,77 @@
+@import "../../styles/var";
+
+.wrapper {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  width: auto;
+  z-index: 999;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.color_list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.color_item {
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  display: inline-block;
+  border: 4px solid #fff;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.color_item:hover {
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  border: none;
+  box-shadow: 0 10px 20px rgba(31, 45, 61, 0.125);
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.item {
+  margin-bottom: 20px;
+}
+
+.list_item {
+  height: auto;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.item_label {
+  flex: 1;
+}
+
+.item_right {
+  float: right;
+}
+
+.item_button {
+  width: 50%;
+  text-align: center;
+}

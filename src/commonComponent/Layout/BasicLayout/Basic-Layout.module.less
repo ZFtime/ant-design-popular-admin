@@ -1,0 +1,65 @@
+@import "../../../styles/var";
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.aside {
+  z-index: 10;
+}
+
+.light {
+  box-shadow: 2px 0 8px 0 rgba(29, 35, 41, .05) !important;
+
+  :global {
+    .ant-drawer-wrapper-body {
+      background-color: #fff;
+    }
+  }
+}
+
+.dark {
+  box-shadow: 2px 0 6px rgba(0, 21, 41, .35) !important;
+
+  :global {
+    .ant-drawer-wrapper-body {
+      background-color: @dark-color;
+    }
+  }
+}
+
+
+.drawerMenu {
+
+  :global {
+    .ant-drawer-body {
+      padding: 0 !important;
+    }
+
+    .ant-drawer-wrapper-body {
+      overflow-x: hidden;
+    }
+  }
+}
+
+.aside_fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content_wrap {
+  position: relative;
+  margin: 0 24px 10px;
+  transition: all .2s;
+}
+
+
+@media (max-width: 768px) {
+  .content_wrap {
+    margin: 0 12px 0;
+  }
+}

@@ -1,0 +1,81 @@
+@import "../../styles/var";
+
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.head {
+  width: 100%;
+  background-color: @primary-color;
+  padding: 24px 20px;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: relative;
+
+  h2 {
+    color: #fff;
+  }
+
+  a {
+    color: #fff;
+    margin-left: 3px;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  .upBtn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+}
+
+.action {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 20px 20px 0 20px;
+
+  .action_row {
+    margin-bottom: 20px;
+  }
+
+  .action_title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .action_check {
+    font-size: 20px;
+    font-weight: normal;
+    margin-right: 10px;
+    color: fade(@primary-color, 50%);
+  }
+
+  .action_no {
+    margin-right: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 1.8;
+    border-radius: 12px;
+    color: #999;
+    font-weight: normal;
+  }
+
+  .action_desc {
+    font-size: 12px;
+    color: #888;
+    padding-left: 34px;
+  }
+
+  .action_btn {
+    margin-left: 34px;
+  }
+}
