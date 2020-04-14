@@ -1,8 +1,10 @@
-import { defineComponent, onMounted, reactive } from '@vue/composition-api'
-import { Table, Empty, Pagination, Button, PageHeader, Icon, Divider } from 'ant-design-vue'
+import { defineComponent, reactive } from '@vue/composition-api'
+import { Table, Pagination, Button, PageHeader, Icon, Divider, Checkbox } from 'ant-design-vue'
 import style from './PositionManager.module.less'
+import Page from '@/components/Page'
 import SearchToolBar from '@/components/SearchToolBar'
 import { onBack } from '@/hooks/useCommon'
+import { useConfigInject } from '@/store'
 
 const searchSource = [
   {
@@ -76,14 +78,14 @@ const dataColumns = [
 export default defineComponent({
   name: 'PositionManager',
   setup () {
+    const { isFlat, isMobile } = useConfigInject()
     const state = reactive({
       searchSource,
       dataColumns,
-      source: []
+      source: [],
+      indeterminate: true,
+      checkAll: false
     })
-    const test = () => {
-      console.log(state)
-    }
     const rowSelection = {
       onChange: (selectedRowKeys: any[], selectedRows: any[]) => {
         console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows)
@@ -95,9 +97,39 @@ export default defineComponent({
         console.log(selected, selectedRows, changeRows)
       }
     }
+    const onCheckAllChange = () => {
+
+    }
     return () => (
-      <div class={style.page}>
-        <PageHeader onBack={onBack} title="职位管理" subTitle="员工职位管理" />
+      <Page scopedSlots={{
+        footer: () => {
+          return (
+            <div class={style.footer}>
+              <div class={style.footer_l}>
+                <Checkbox
+                  indeterminate={state.indeterminate}
+                  change="onCheckAllChange"
+                  checked={state.checkAll}>
+                  已选25项
+                </Checkbox>
+                <span>容器数量：8个</span>
+                <span>调用次数：265次</span>
+              </div>
+              {isFlat() || isMobile() ? (
+                <Icon type="ellipsis" class={style.action_icon} />
+              ) : (
+                <div class={style.footer_r}>
+                  <Button icon="delete" type="danger">批量删除</Button>
+                  <Button>批量导出</Button>
+                  <Button>批量创建职位</Button>
+                  <Button type="primary">批量查看</Button>
+                </div>
+              )}
+            </div>
+          )
+        }
+      }}>
+        <PageHeader onBack={onBack} class={style.header} title="职位管理" subTitle="员工职位管理" />
         <SearchToolBar dataSource={state.searchSource} />
         <div class={style.wrapper}>
           <div class={style.actions}>
@@ -106,16 +138,17 @@ export default defineComponent({
             <Button icon="export">导出数据</Button>
             <Button type="primary" icon="plus">新增职位</Button>
             <Divider type="vertical" />
-            <Icon type="reload" class={style.action_icon}></Icon>
-            <Icon type="setting" class={style.action_icon}></Icon>
-            <Icon type="border" class={style.action_icon}></Icon>
+            <Icon type="column-height" class={style.action_icon} />
+            <Icon type="fullscreen" class={style.action_icon} />
+            <Icon type="reload" class={style.action_icon} />
+            <Icon type="setting" class={style.action_icon} />
           </div>
           <Table columns={state.dataColumns} dataSource={state.source} rowSelection={rowSelection} />
           <div class={style.pagination}>
             <Pagination total={500} current={2} size="20" showQuickJumper />
           </div>
         </div>
-      </div>
+      </Page>
     )
   }
 })

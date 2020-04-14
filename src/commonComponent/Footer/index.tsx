@@ -1,12 +1,14 @@
 import { defineComponent } from '@vue/composition-api'
 import { Layout, Icon } from 'ant-design-vue'
 import style from './Footer.module.less'
+import { usePluginsInject } from '@/store'
 
 export default defineComponent({
   name: 'Footer',
   setup () {
+    const { router } = usePluginsInject()
     return () => (
-      <Layout.Footer>
+      <Layout.Footer style={{ paddingBottom: router.app.$route.meta.footerAction ? '84px' : '24' }}>
         <div class={style.footer}>
           <div class={style.links}>
             <a title="Ant Design Pro" target="_blank" href="https://pro.ant.design">Ant Design Pro</a>

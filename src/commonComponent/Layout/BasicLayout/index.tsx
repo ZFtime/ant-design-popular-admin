@@ -73,10 +73,12 @@ export default defineComponent({
             theme={navTheme.value}
             menu={menuList}
             contentWidth={contentWidth.value} />
-          <Layout.Content>
-            <div class={style.content_wrap}>
-              <router-view />
-            </div>
+          <Layout.Content class={style.content_wrap}>
+            {layout.value === 'topMenu' && contentWidth.value === 'fixed' ? (
+              <div class={layout.value === 'topMenu' && contentWidth.value === 'fixed' ? 'wide' : ''}>
+                <router-view />
+              </div>
+            ) : <router-view />}
           </Layout.Content>
           <Footer />
         </Layout>

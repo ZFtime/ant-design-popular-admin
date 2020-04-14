@@ -18,7 +18,8 @@ export interface RouteMeta {
   keepAlive?: boolean,
   target?: string,
   icon?: any,
-  group?: string
+  group?: string,
+  footerAction?: boolean
 }
 
 /**

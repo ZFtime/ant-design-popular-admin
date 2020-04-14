@@ -38,4 +38,7 @@ export { default as ExportOutline } from '@ant-design/icons/lib/outline/ExportOu
 export { default as ImportOutline } from '@ant-design/icons/lib/outline/ImportOutline'
 export { default as ArrowLeftOutline } from '@ant-design/icons/lib/outline/ArrowLeftOutline'
 export { default as ReloadOutline } from '@ant-design/icons/lib/outline/ReloadOutline'
-export { default as BorderOutline } from '@ant-design/icons/lib/outline/BorderOutline'
+export { default as ColumnHeightOutline } from '@ant-design/icons/lib/outline/ColumnHeightOutline'
+export { default as FullscreenOutline } from '@ant-design/icons/lib/outline/FullscreenOutline'
+export { default as FullscreenExitOutline } from '@ant-design/icons/lib/outline/FullscreenExitOutline'
+export { default as EllipsisOutline } from '@ant-design/icons/lib/outline/EllipsisOutline'

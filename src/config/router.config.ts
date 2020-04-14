@@ -85,7 +85,8 @@ const asyncRouteMap: CustomRouteConfig[] = [
             name: 'position-manager',
             meta: {
               keepAlive: true,
-              title: 'menu.settings.positionManager'
+              title: 'menu.settings.positionManager',
+              footerAction: true
             },
             component: () => import(/* webpackChunkName:"position-manager" */ '@/pages/settings/PositionManager')
           }

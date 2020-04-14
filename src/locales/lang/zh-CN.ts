@@ -74,6 +74,7 @@ export default {
     }
   },
   menu: {
+    home: '首页',
     dashboard: {
       default: '仪表盘',
       analysis: '监控台',

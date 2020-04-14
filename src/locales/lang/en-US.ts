@@ -74,6 +74,7 @@ export default {
     }
   },
   menu: {
+    home: 'Home',
     dashboard: {
       default: 'Dashboard',
       analysis: 'Analysis',
