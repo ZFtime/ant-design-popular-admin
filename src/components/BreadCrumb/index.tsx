@@ -37,7 +37,7 @@ export default defineComponent({
         {state.list.map((item: RouteRecord, index: number) => {
           return (
             <Breadcrumb.Item>
-              {item.name !== state.name && index !== 1
+              {item.name !== state.name && index !== -1
                 ? <router-link to={{ path: item.path === '' ? '/' : item.path }}>
                   {i18nRender(item.meta.title)}
                 </router-link>

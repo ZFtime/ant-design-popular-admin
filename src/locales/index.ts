@@ -36,7 +36,6 @@ export default i18n
 export const i18nRender = (key: string): any => i18n.t(key)
 
 const setI18nLanguage = (lang: string) => {
-  console.log(i18n.getLocaleMessage(lang))
   i18n.locale = lang
   langState.locale = lang
   langState.ant = i18n.getLocaleMessage(lang).antLocale

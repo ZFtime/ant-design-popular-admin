@@ -1,13 +1,8 @@
-import Mock from 'mockjs'
+const Mock = require('mockjs')
 
-Mock.setup({
-  timeout: '10-2500'
-})
-
-Mock.mock(/\/user/, {
-  info: {
-    name: Mock.Random.cname(),
-    'age|12-38': 1,
-    'sex|1': ['male', 'female']
-  }
-})
+if (process.env.NODE_ENV === 'development') {
+  require('./modules/settings')
+  Mock.setup({
+    timeout: '10-2500'
+  })
+}
